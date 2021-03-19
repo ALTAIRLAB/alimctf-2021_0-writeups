@@ -64,22 +64,52 @@ Using table as reference you can find the way to decode. Just find key symbol in
 
 > Ding! You have an email!	[spam_omegaedgeoftomm.txt](files/spam_omegaedgeoftomm.txt)	
 > **alimCTF{why_do_my_eyes_hurt}**
-## human2machine	
+
+To solve this you can use http://spammimic.com/decode.shtml
+## human2machine
 
 > Long long time ago, there were a programmers like Neo	[card.png](files/card.png)
 > **ALIMCTF(TRINITY_KEYPUNCH)**
+
+This one is also can be solved using online tools https://www.masswerk.at/cardreader/ but you will have such result `\x2400\x1100\x2001\x1020\x2100\x0900\x2008\x2012\x0900\x1001\x2001\x1010\x2001\x0900\x0802\x0812\x1200\x2010\x0802\x1004\x0820\x1010\x2100\x2002\x1012`
+which can be decoded using table 
+```
+A 2400    J 1400    / 0C00
+B 2200    K 1200    S 0A00
+C 2100    L 1100    T 0900
+D 2020    M 1020    U 0820
+E 2010    N 1010    V 0810
+F 2008    O 1008    W 0808
+G 2004    P 1004    X 0804
+H 2002    Q 1002    Y 0802
+I 2001    R 1001    Z 0801
+
+¢ 2202    ! 1202              : 0202
+. 2102    $ 1102    , 0902    # 0102
+< 2022    * 1022    % 0822    @ 0022
+( 2012    ) 1012    _ 0812    ' 0012
++ 200A    ; 100A    > 080A    = 000A
+| 2006    ¬ 1006    ? 0806    " 0006
+```
+
 ## Xeon not found	
 
 > Neo doesnt know key from Xeon	[xeon.py](files/xeon.py)	
 > **alimCTF{n30_d03s_n0t_kn0w_pyth0n}**
+
+just opening file as text will give you flag parts
 ## vedroid
 
 > Meet the Rick, he lives in Matrix too	[alimCTF2021.apk](files/alimCTF2021.apk)	
 > **alimCTF{the_best_app_the_w0rld}**
+
+one of the simplies ways is to use `strings` linux command. But first we need to extract everthing from apk to folder since it is an archive, then just use it on all files like `strings * | grep alimCTF` and you will see flag at the end.
 ## to turst or not to trust	
 
 > In God we trust	[notrust.png](files/notrust.png)	
 > **alimCTF{trust_n0_0n3_1n_the_w3b}**
+
+lets check if file is archive, just rename it to have .zip extension
 ## snow	
 
 > password is 1234	[letitsnow.txt](files/letitsnow.txt)	
